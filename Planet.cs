@@ -33,6 +33,53 @@ namespace PlanetClicker
             damage = 0;
         }
 
+        //This is actually apparently 20 times faster and allocates no memory than just using .ToString
+        public string GetTypeString()
+        {
+            switch (type)
+            {
+                case PlanetType.Dry:
+                    return nameof(PlanetType.Dry);
+                case PlanetType.Gas1:
+                    return nameof(PlanetType.Gas1);
+                case PlanetType.Gas2:
+                    return nameof(PlanetType.Gas2);
+                case PlanetType.Ice:
+                    return nameof(PlanetType.Ice);
+                case PlanetType.Islands:
+                    return nameof(PlanetType.Islands);
+                case PlanetType.Lava:
+                    return nameof(PlanetType.Lava);
+                case PlanetType.Wet:
+                    return nameof(PlanetType.Wet);
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, "No valid planet type");
+            }
+        }
+        public string GetTypeString(PlanetType _type)
+        {
+            switch (_type)
+            {
+                case PlanetType.Dry:
+                    return nameof(PlanetType.Dry);
+                case PlanetType.Gas1:
+                    return nameof(PlanetType.Gas1);
+                case PlanetType.Gas2:
+                    return nameof(PlanetType.Gas2);
+                case PlanetType.Ice:
+                    return nameof(PlanetType.Ice);
+                case PlanetType.Islands:
+                    return nameof(PlanetType.Islands);
+                case PlanetType.Lava:
+                    return nameof(PlanetType.Lava);
+                case PlanetType.Wet:
+                    return nameof(PlanetType.Wet);
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(_type), _type, "No valid planet type");
+
+            }
+        }
+
         private ulong CalcPop(float planetSize)
         {
             ulong pop;
@@ -40,6 +87,8 @@ namespace PlanetClicker
             pop = (ulong)(pop * planetSize);
             return pop;
         }
+
+
 
     }
 
