@@ -76,7 +76,6 @@ namespace PlanetClicker
                     return nameof(PlanetType.Wet);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(_type), _type, "No valid planet type");
-
             }
         }
 
